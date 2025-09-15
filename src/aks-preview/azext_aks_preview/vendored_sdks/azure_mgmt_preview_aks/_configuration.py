@@ -43,6 +43,8 @@ class ContainerServiceClientConfiguration:  # pylint: disable=too-many-instance-
         cloud_setting: Optional["AzureClouds"] = None,
         **kwargs: Any
     ) -> None:
+        IB_API_VERSION = "2025-06-02-preview"  # IB API Version is different from the default API Version
+
         api_version: str = kwargs.pop("api_version", "2025-07-02-preview")
 
         if credential is None:
@@ -54,6 +56,7 @@ class ContainerServiceClientConfiguration:  # pylint: disable=too-many-instance-
         self.subscription_id = subscription_id
         self.cloud_setting = cloud_setting
         self.api_version = api_version
+        self.ib_api_version = IB_API_VERSION
         self.credential_scopes = kwargs.pop("credential_scopes", ["https://management.azure.com/.default"])
         kwargs.setdefault("sdk_moniker", "mgmt-containerservice/{}".format(VERSION))
         self.polling_interval = kwargs.get("polling_interval", 30)

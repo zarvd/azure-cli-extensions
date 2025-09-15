@@ -268,7 +268,7 @@ class IdentityBindingsOperations:
         _headers = kwargs.pop("headers", {}) or {}
         _params = case_insensitive_dict(kwargs.pop("params", {}) or {})
 
-        api_version: str = kwargs.pop("api_version", _params.pop("api-version", self._config.api_version))
+        api_version: str = kwargs.pop("api_version", _params.pop("api-version", self._config.ib_api_version))
         cls: ClsType[_models.IdentityBindingListResult] = kwargs.pop("cls", None)
 
         error_map: MutableMapping = {
@@ -364,7 +364,7 @@ class IdentityBindingsOperations:
         _headers = kwargs.pop("headers", {}) or {}
         _params = case_insensitive_dict(kwargs.pop("params", {}) or {})
 
-        api_version: str = kwargs.pop("api_version", _params.pop("api-version", self._config.api_version))
+        api_version: str = kwargs.pop("api_version", _params.pop("api-version", self._config.ib_api_version))
         cls: ClsType[_models.IdentityBinding] = kwargs.pop("cls", None)
 
         _request = build_get_request(
@@ -416,7 +416,7 @@ class IdentityBindingsOperations:
         _headers = case_insensitive_dict(kwargs.pop("headers", {}) or {})
         _params = case_insensitive_dict(kwargs.pop("params", {}) or {})
 
-        api_version: str = kwargs.pop("api_version", _params.pop("api-version", self._config.api_version))
+        api_version: str = kwargs.pop("api_version", _params.pop("api-version", self._config.ib_api_version))
         content_type: Optional[str] = kwargs.pop("content_type", _headers.pop("Content-Type", None))
         cls: ClsType[Iterator[bytes]] = kwargs.pop("cls", None)
 
@@ -569,7 +569,7 @@ class IdentityBindingsOperations:
         _headers = case_insensitive_dict(kwargs.pop("headers", {}) or {})
         _params = case_insensitive_dict(kwargs.pop("params", {}) or {})
 
-        api_version: str = kwargs.pop("api_version", _params.pop("api-version", self._config.api_version))
+        api_version: str = kwargs.pop("api_version", _params.pop("api-version", self._config.ib_api_version))
         content_type: Optional[str] = kwargs.pop("content_type", _headers.pop("Content-Type", None))
         cls: ClsType[_models.IdentityBinding] = kwargs.pop("cls", None)
         polling: Union[bool, PollingMethod] = kwargs.pop("polling", True)
@@ -637,7 +637,7 @@ class IdentityBindingsOperations:
         _headers = kwargs.pop("headers", {}) or {}
         _params = case_insensitive_dict(kwargs.pop("params", {}) or {})
 
-        api_version: str = kwargs.pop("api_version", _params.pop("api-version", self._config.api_version))
+        api_version: str = kwargs.pop("api_version", _params.pop("api-version", self._config.ib_api_version))
         cls: ClsType[Iterator[bytes]] = kwargs.pop("cls", None)
 
         _request = build_delete_request(
@@ -709,7 +709,7 @@ class IdentityBindingsOperations:
         _headers = kwargs.pop("headers", {}) or {}
         _params = case_insensitive_dict(kwargs.pop("params", {}) or {})
 
-        api_version: str = kwargs.pop("api_version", _params.pop("api-version", self._config.api_version))
+        api_version: str = kwargs.pop("api_version", _params.pop("api-version", self._config.ib_api_version))
         cls: ClsType[None] = kwargs.pop("cls", None)
         polling: Union[bool, PollingMethod] = kwargs.pop("polling", True)
         lro_delay = kwargs.pop("polling_interval", self._config.polling_interval)
